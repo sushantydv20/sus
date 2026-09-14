@@ -5,5 +5,5 @@
   "description":"SUSHANT YADAV premium portfolio with built-in SQLite, secure admin, enquiries and hosted project websites.",
   "main":"server.js",
   "scripts":{"start":"node server.js","dev":"node server.js"},
-  "engines":{"node":">=22.5.0"}
+  "engines":{"node":"22.x"}
 }

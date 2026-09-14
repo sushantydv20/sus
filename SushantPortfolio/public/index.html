@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="SUSHANT YADAV — Premium websites and digital experiences for modern businesses.">
+<meta name="theme-color" content="#0a0a0d">
+<title>SUSHANT YADAV — Digital Web Developer</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#07080b;--surface:#0d0f14;--surface2:#14171e;--text:#f7f3e9;--muted:#969aa5;--gold:#d5b16a;--gold2:#f2d99d;--line:rgba(255,255,255,.085);--ok:#78dc9e;--red:#ff6b6b;--shadow:0 35px 100px rgba(0,0,0,.48);--radius:18px}
+body.light{--bg:#f5f1e8;--surface:#fffdf8;--surface2:#ece7dc;--text:#151515;--muted:#66635d;--line:rgba(0,0,0,.1);--shadow:0 30px 80px rgba(60,45,20,.12)}
+html{scroll-behavior:smooth;scroll-padding-top:85px}
+body{font-family:"DM Sans",sans-serif;background:radial-gradient(circle at 80% 0,rgba(213,177,106,.12),transparent 26%),radial-gradient(circle at 0 45%,rgba(107,73,160,.09),transparent 25%),var(--bg);color:var(--text);overflow-x:hidden;transition:.3s}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.035;background-image:linear-gradient(rgba(255,255,255,.6) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.6) 1px,transparent 1px);background-size:68px 68px}
+a{text-decoration:none;color:inherit}button,input,textarea,select{font:inherit}.wrap{width:min(1200px,92%);margin:auto}
+.nav{height:76px;position:fixed;top:0;left:0;width:100%;z-index:100;background:rgba(7,8,11,.64);backdrop-filter:blur(20px);border-bottom:1px solid transparent;transition:.3s}.light .nav{background:rgba(245,241,232,.75)}.nav.scrolled{border-color:var(--line)}
+.navin{height:100%;display:flex;align-items:center;justify-content:space-between}.brand{font:700 19px "Manrope";letter-spacing:-.055em}.brand i{font-style:normal;color:var(--gold)}
+.navlinks{display:flex;align-items:center;gap:26px}.navlinks a{font-size:12px;color:var(--muted);transition:.2s}.navlinks a:hover{color:var(--text)}.navlinks .contactNav{border:1px solid var(--gold);color:var(--gold);padding:9px 13px;border-radius:9px}
+.navtools{display:flex;gap:7px}.tool,.hamb{width:38px;height:38px;border:1px solid var(--line);background:var(--surface);color:var(--text);border-radius:9px;cursor:pointer}.hamb{display:none;font-size:18px}
+.hero{min-height:100vh;padding:130px 0 70px;display:grid;align-items:center}.heroGrid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.kicker{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border:1px solid var(--line);border-radius:99px;background:rgba(213,177,106,.055);color:var(--gold2);font-size:9px;text-transform:uppercase;letter-spacing:.18em;margin-bottom:22px}.dot{width:6px;height:6px;border-radius:50%;background:var(--ok);box-shadow:0 0 13px var(--ok)}
+h1{font:600 clamp(54px,7vw,91px)/.9 "Manrope";letter-spacing:-.085em}.gold{background:linear-gradient(100deg,#b98c46,#f3dba0,#ba8c44);-webkit-background-clip:text;color:transparent}
+.heroText{max-width:600px;color:var(--muted);font-size:15px;line-height:1.85;margin:27px 0}.heroText strong{color:var(--text);font-weight:600}
+.actions{display:flex;gap:10px;flex-wrap:wrap}.btn{border:1px solid var(--line);border-radius:10px;padding:12px 17px;display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;cursor:pointer;transition:.25s}.btn:hover{transform:translateY(-3px)}.primary{background:var(--gold);border-color:var(--gold);color:#111}.secondary{background:var(--surface);color:var(--text)}
+.stats{display:flex;gap:30px;margin-top:37px}.stat strong{font:600 22px "Space Grotesk"}.stat span{display:block;color:var(--muted);font-size:8px;text-transform:uppercase;letter-spacing:.13em}
+.visual{position:relative;min-height:565px}.portrait{position:absolute;right:7px;top:0;width:min(455px,80vw);aspect-ratio:1;border-radius:50%;padding:6px;background:linear-gradient(135deg,#f3dca2,#86612f 45%,#e7c77e);box-shadow:0 45px 120px rgba(178,132,53,.2)}.portrait img{width:100%;height:100%;object-fit:cover;border-radius:50%;display:block}
+.code{position:absolute;z-index:3;left:-25px;bottom:27px;width:370px;background:rgba(9,10,14,.96);border:1px solid rgba(213,177,106,.25);border-radius:15px;box-shadow:var(--shadow);overflow:hidden;transform:rotate(-3deg)}.codeHead{height:33px;border-bottom:1px solid #25272d;display:flex;align-items:center;gap:5px;padding:0 11px}.codeHead i{width:7px;height:7px;border-radius:50%;background:#5e6169}.file{font:10px monospace;color:#747884;margin-left:7px}.codeBody{padding:16px;font:11px/1.9 monospace;color:#d8dae1}.p{color:#d3a7ff}.b{color:#8dd8ff}.g{color:#9fe3ae}.y{color:#f1d293}.gr{color:#6e727e}
+.float{position:absolute;right:-2px;bottom:4px;z-index:4;padding:10px 13px;border-radius:11px;background:var(--surface);border:1px solid var(--line);box-shadow:var(--shadow);font-size:10px}.float b{color:var(--gold)}
+.marquee{border-block:1px solid var(--line);overflow:hidden;padding:13px 0}.track{display:flex;width:max-content;gap:37px;color:var(--muted);font-size:9px;text-transform:uppercase;letter-spacing:.18em;animation:marq 25s linear infinite}.track b{color:var(--gold)}@keyframes marq{to{transform:translateX(-50%)}}
+section{padding:105px 0}.head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:38px}.eyebrow{color:var(--gold);font-size:9px;text-transform:uppercase;letter-spacing:.2em;font-weight:700;margin-bottom:11px}.head h2{font:600 clamp(34px,4.6vw,59px)/.98 "Manrope";letter-spacing:-.07em}.head p{max-width:460px;color:var(--muted);font-size:13px;line-height:1.75}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}.card{border:1px solid var(--line);border-radius:var(--radius);padding:25px;background:linear-gradient(145deg,rgba(255,255,255,.045),rgba(255,255,255,.012));transition:.3s}.card:hover{transform:translateY(-6px);border-color:rgba(213,177,106,.32);box-shadow:0 25px 70px rgba(0,0,0,.18)}.icon{width:43px;height:43px;border:1px solid rgba(213,177,106,.22);border-radius:11px;display:grid;place-items:center;color:var(--gold);font-size:17px;margin-bottom:20px}.card h3{font:600 17px "Manrope";margin-bottom:8px}.card p{font-size:12px;line-height:1.72;color:var(--muted)}.num{float:right;color:#656973;font-size:9px}
+.filters{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:17px}.filters button{border:1px solid var(--line);background:var(--surface);color:var(--muted);padding:7px 11px;border-radius:8px;font-size:10px;cursor:pointer}.filters button.active{background:var(--gold);color:#111;border-color:var(--gold)}
+.projects{display:grid;grid-template-columns:1.18fr .82fr;gap:13px}.project{padding:0;min-height:350px;position:relative;overflow:hidden}.project.big{min-height:500px}.project img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.38;transition:.5s}.project:hover img{transform:scale(1.06);opacity:.52}.project:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 15%,rgba(3,4,7,.96) 92%)}.projectInfo{position:absolute;z-index:2;bottom:0;padding:24px;width:100%}.projectInfo small{color:var(--gold);font-size:9px;text-transform:uppercase;letter-spacing:.12em}.projectInfo h3{font:600 28px "Manrope";margin:4px 0}.projectInfo p{color:#b3b5bd;font-size:11px}.tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}.tag{border:1px solid rgba(255,255,255,.13);padding:4px 7px;border-radius:6px;font:9px monospace;color:#aeb0b8}
+.digitalBanner{border:1px solid rgba(213,177,106,.25);border-radius:22px;padding:48px;background:linear-gradient(115deg,rgba(213,177,106,.1),rgba(255,255,255,.02) 55%,rgba(100,70,145,.08));position:relative;overflow:hidden}.digitalBanner:after{content:"01";position:absolute;right:25px;top:-35px;font:800 180px "Space Grotesk";color:rgba(255,255,255,.025)}.digitalBanner h2{font:600 clamp(36px,5vw,65px)/.96 "Manrope";letter-spacing:-.07em;max-width:850px}.digitalBanner p{max-width:700px;color:var(--muted);line-height:1.8;font-size:14px;margin:20px 0 25px}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}.about p{color:var(--muted);font-size:13px;line-height:1.8;margin-top:18px}.checks{display:grid;gap:11px;margin-top:25px}.check{font-size:12px}.check span{color:var(--gold);margin-right:9px}.process{display:grid;gap:9px}.step{display:flex;gap:13px;padding:16px;border:1px solid var(--line);border-radius:12px;background:var(--surface)}.stepno{width:30px;height:30px;display:grid;place-items:center;background:var(--gold);color:#111;border-radius:8px;font-size:10px;font-weight:800;flex:none}.step h4{font-size:13px}.step p{margin-top:2px;font-size:10px;color:var(--muted)}
+.prices{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}.price{position:relative}.popular{position:absolute;right:17px;top:17px;background:var(--gold);color:#111;padding:5px 7px;border-radius:99px;font-size:8px;font-weight:800}.priceValue{font:600 37px "Space Grotesk";margin:15px 0 4px}.priceValue small{font:10px "DM Sans";color:var(--muted)}.features{list-style:none;display:grid;gap:9px;margin:22px 0}.features li{color:var(--muted);font-size:11px}.features li:before{content:"✓";color:var(--gold);margin-right:8px}
+.contact{display:grid;grid-template-columns:1fr .85fr;gap:35px;padding:38px;border:1px solid rgba(213,177,106,.22);border-radius:22px;background:linear-gradient(145deg,rgba(213,177,106,.08),rgba(255,255,255,.02))}.contact h2{font:600 clamp(36px,5vw,61px)/.97 "Manrope";letter-spacing:-.07em}.contact p{color:var(--muted);font-size:12px;line-height:1.75;margin:16px 0}.contactInfo{display:grid;gap:9px;margin-top:22px}.contactInfo a{font-size:12px;color:#d4d5dc}.contactInfo b{color:var(--gold);font-size:9px;letter-spacing:.12em;margin-right:7px}form{display:grid;gap:9px}input,textarea,select{width:100%;background:var(--surface);border:1px solid var(--line);color:var(--text);border-radius:10px;padding:12px;font-size:12px;outline:none}input:focus,textarea:focus,select:focus{border-color:var(--gold)}textarea{min-height:120px;resize:vertical}
+.footer{border-top:1px solid var(--line);padding:27px 0;color:var(--muted);font-size:9px}.footerin{display:flex;justify-content:space-between}
+.top{position:fixed;right:18px;bottom:18px;width:40px;height:40px;border:1px solid var(--line);background:var(--surface);color:var(--text);border-radius:10px;display:none;z-index:60;cursor:pointer}.top.show{display:block}.toast{position:fixed;left:50%;bottom:23px;transform:translate(-50%,20px);background:#f2eee4;color:#111;padding:10px 15px;border-radius:9px;font-size:11px;opacity:0;pointer-events:none;transition:.25s;z-index:300}.toast.show{opacity:1;transform:translate(-50%,0)}
+.modal,.loginModal,.admin{position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.8);backdrop-filter:blur(9px);display:none}.modal.show,.loginModal.show,.admin.show{display:block}.modal{place-items:center;padding:20px}.modalBox{width:min(650px,94%);margin:9vh auto;background:var(--surface);border:1px solid var(--line);border-radius:17px;padding:27px;position:relative}.close{position:absolute;right:13px;top:10px;border:0;background:none;color:var(--text);font-size:23px;cursor:pointer}.modalBox h3{font:600 28px "Manrope";margin-bottom:7px}.modalBox p{color:var(--muted);font-size:12px;line-height:1.7}.modalBox ul{color:var(--muted);font-size:11px;line-height:2;margin:16px 0 20px;padding-left:18px}
+.loginBox{width:min(400px,92%);margin:14vh auto;background:var(--surface);border:1px solid var(--line);border-radius:17px;padding:28px;box-shadow:var(--shadow);position:relative}.loginBox h3{font:600 28px "Manrope";margin-bottom:7px}.loginBox p{font-size:11px;color:var(--muted);margin-bottom:20px}.error{color:var(--red);font-size:10px;min-height:13px}
+.admin{background:var(--bg);overflow:auto}.adminWrap{width:min(1260px,94%);margin:auto;padding:25px 0 60px}.adminTop{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding-bottom:19px;margin-bottom:20px}.adminTop h2{font:600 27px "Manrope"}.adminGrid{display:grid;grid-template-columns:235px 1fr;gap:16px}.side{height:max-content;position:sticky;top:15px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:10px}.side button{display:block;width:100%;border:0;background:none;color:var(--muted);padding:11px;border-radius:8px;text-align:left;cursor:pointer;font-size:11px}.side button:hover,.side button.active{background:var(--surface2);color:var(--text)}.panel{display:none}.panel.active{display:block}.panel h3{font:600 24px "Manrope";margin-bottom:5px}.panel>p{color:var(--muted);font-size:11px;margin-bottom:17px}.adminCards{display:grid;grid-template-columns:repeat(2,1fr);gap:11px}.adminCard{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px}.adminCard.full{grid-column:1/-1}.adminCard label{display:block;color:var(--muted);font-size:9px;margin-bottom:6px}.adminCard input,.adminCard textarea,.adminCard select{margin-bottom:7px}.adminActions{display:flex;gap:7px;flex-wrap:wrap;margin-top:8px}.mini{padding:8px 11px;font-size:10px}.workRow{display:flex;justify-content:space-between;gap:15px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:11px;padding:12px;margin-bottom:7px}.workRow b{font-size:12px}.workRow small{display:block;color:var(--muted);font-size:9px;margin-top:2px}.danger{color:var(--red)!important;border-color:rgba(255,107,107,.3)!important}.uploadBox{border:1px dashed rgba(213,177,106,.35);border-radius:11px;padding:17px;text-align:center;color:var(--muted);font-size:10px}.uploadBox input{border:0;background:none;margin-top:7px}.adminStats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.adminStat{padding:18px;border:1px solid var(--line);border-radius:12px;background:var(--surface)}.adminStat strong{font:600 25px "Space Grotesk"}.adminStat span{display:block;color:var(--muted);font-size:9px;margin-top:3px}.switch{display:flex;align-items:center;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--line);font-size:11px}.switch input{width:18px;height:18px;accent-color:var(--gold)}
+@media(max-width:900px){.heroGrid,.about,.contact{grid-template-columns:1fr}.visual{min-height:510px}.portrait{right:50%;transform:translateX(50%)}.code{left:0}.float{right:0}.grid3,.prices{grid-template-columns:1fr 1fr}.projects{grid-template-columns:1fr}.project.big{min-height:400px}.adminGrid{grid-template-columns:1fr}.side{position:static}.adminStats{grid-template-columns:1fr 1fr}}
+@media(max-width:650px){.nav{height:67px}.navlinks{display:none;position:absolute;top:67px;left:0;width:100%;padding:17px 5%;background:var(--surface);border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start}.navlinks.open{display:flex}.hamb{display:block}.tool{display:none}h1{font-size:53px}.hero{padding-top:100px}.visual{min-height:410px}.portrait{width:285px}.code{width:270px;bottom:0}.codeBody{font-size:9px}.float{bottom:-3px}.stats{gap:18px}.head{display:block}.head p{margin-top:14px}.grid3,.prices,.adminCards,.adminStats{grid-template-columns:1fr}.projects{grid-template-columns:1fr}.project.big{min-height:360px}.digitalBanner{padding:28px}.contact{padding:25px}.footerin{display:block}.footerin span{display:block;margin-top:8px}}
+
+.settingsNav{border:1px solid var(--line);background:rgba(255,255,255,.025);color:var(--muted);padding:8px 11px;border-radius:9px;font-size:11px;cursor:pointer;transition:.25s}
+.settingsNav:hover{border-color:rgba(213,177,106,.4);color:var(--gold);transform:translateY(-2px)}
+.settingsOverlay{position:fixed;inset:0;z-index:180;background:rgba(0,0,0,.58);backdrop-filter:blur(10px);display:none}
+.settingsOverlay.show{display:block}
+.settingsDrawer{position:absolute;right:0;top:0;height:100%;width:min(470px,94%);overflow:auto;padding:38px 29px;background:linear-gradient(160deg,#101218 0%,#0b0c10 55%,#12100c 100%);border-left:1px solid rgba(213,177,106,.22);box-shadow:-35px 0 100px rgba(0,0,0,.4)}
+.light .settingsDrawer{background:linear-gradient(160deg,#fffdf8,#f1ece1)}
+.settingsDrawer h3{font:600 32px "Manrope";letter-spacing:-.06em;margin-bottom:8px}
+.settingsIntro{font-size:11px;color:var(--muted);line-height:1.7;margin-bottom:25px}
+.settingsClose{top:18px;right:20px}
+.settingSection{border:1px solid var(--line);border-radius:15px;padding:16px;margin-bottom:11px;background:rgba(255,255,255,.025)}
+.settingTitle{display:flex;justify-content:space-between;align-items:center;margin-bottom:11px;font:600 11px "Manrope";text-transform:uppercase;letter-spacing:.12em}
+.settingTitle small{font-size:8px;color:var(--gold)}
+.settingRow{display:flex;justify-content:space-between;align-items:center;gap:15px;padding:12px 0;border-top:1px solid var(--line)}
+.settingRow:first-of-type{border-top:0}
+.settingRow b,.adminLaunch b{display:block;font-size:11px}.settingRow span,.adminLaunch span{display:block;color:var(--muted);font-size:9px;line-height:1.55;margin-top:3px}
+.settingRow select{width:auto;min-width:130px}.settingRow input[type=color]{width:48px;height:35px;padding:3px;border-radius:8px}
+.settingValue{font:600 11px "Space Grotesk";color:var(--gold)}
+.adminLaunch{display:flex;align-items:center;gap:12px;padding:12px;border-radius:11px;border:1px solid rgba(213,177,106,.2);background:linear-gradient(120deg,rgba(213,177,106,.09),rgba(255,255,255,.02))}
+.adminLaunch>div:nth-child(2){flex:1}.adminShield{width:39px;height:39px;border-radius:10px;display:grid;place-items:center;background:var(--gold);color:#111;font-weight:800}
+.settingsNote{font-size:9px;line-height:1.7;color:var(--muted);padding:13px;border-left:2px solid var(--gold);background:rgba(213,177,106,.04)}
+@media(max-width:650px){.settingsNav{display:none}.settingsDrawer{padding:31px 19px}.settingRow{align-items:flex-start;flex-direction:column}.settingRow select,.settingRow input[type=color]{width:100%}.adminLaunch{align-items:flex-start;flex-wrap:wrap}.adminLaunch .btn{margin-left:51px}}
+
+.websitePreview{position:fixed;inset:0;z-index:260;background:rgba(0,0,0,.86);backdrop-filter:blur(8px);display:none;padding:18px}
+.websitePreview.show{display:flex;flex-direction:column}
+.websitePreviewHead{height:52px;display:flex;align-items:center;justify-content:space-between;gap:10px;color:#fff}
+.websitePreviewHead b{font:600 15px Manrope}.websiteFrame{width:100%;height:calc(100% - 52px);border:1px solid rgba(213,177,106,.3);border-radius:12px;background:#fff}
+</style>
+
+<style>
+/* Production fixes */
+.settingsNav{display:inline-flex!important;align-items:center}
+@media(max-width:650px){.settingsNav{display:inline-flex!important}.navlinks.open .settingsNav{display:inline-flex}}
+.websiteFrame{background:#fff}
+.admin{z-index:500}
+.loginModal{z-index:600}
+.settingsOverlay{z-index:550}
+.modal{z-index:580}
+</style>
+</head>
+<body>
+<header class="nav" id="nav"><div class="wrap navin">
+<a class="brand" href="#home">SUSHANT<i>.</i></a>
+<nav class="navlinks" id="navlinks"><a href="#services">Services</a><a href="#work">Work</a><a href="#about">About</a><a href="#pricing">Pricing</a><a href="#contact" class="contactNav">Let's Talk ↗</a><button class="settingsNav" id="settingsBtn" aria-label="Open settings">⚙ Settings</button></nav>
+<div class="navtools"><button class="tool" id="theme">☼</button><button class="hamb" id="hamb">☰</button></div>
+</div></header>
+
+<main>
+<section class="hero" id="home"><div class="wrap heroGrid">
+<div class="reveal"><div class="kicker"><span class="dot"></span> Available for new projects</div>
+<h1>I'm <span class="gold">SUSHANT</span><br>YADAV.<br>I build the <span class="gold">future.</span></h1>
+<p class="heroText">The world is becoming <strong>digital</strong>. Your business should be too. I create premium websites and digital experiences that help businesses build trust, reach more people and turn visitors into customers.</p>
+<div class="actions"><a class="btn primary" href="#contact">Make My Business Digital ↗</a><a class="btn secondary" href="#work">Explore My Work ↓</a></div>
+<div class="stats"><div class="stat"><strong>100%</strong><span>Responsive</span></div><div class="stat"><strong>Fast</strong><span>Performance</span></div><div class="stat"><strong>24/7</strong><span>Digital Presence</span></div></div></div>
+<div class="visual reveal"><div class="portrait"><img src="/assets/sushant-yadav.png" alt="SUSHANT YADAV"></div>
+<div class="code"><div class="codeHead"><i></i><i></i><i></i><span class="file">sushant.digital.js</span></div><div class="codeBody"><span class="p">const</span> business = {<br>&nbsp;&nbsp;owner: <span class="y">"SUSHANT YADAV"</span>,<br>&nbsp;&nbsp;future: <span class="g">"digital"</span>,<br>&nbsp;&nbsp;website: <span class="b">true</span>,<br>&nbsp;&nbsp;growth: <span class="g">"online"</span><br>};<br><span class="gr">// build. launch. grow.</span></div></div>
+<div class="float">✦ <b>Premium Web Developer</b><br>&nbsp;&nbsp;&nbsp;Design · Code · Growth</div></div>
+</div></section>
+
+<div class="marquee"><div class="track"><b>Digital Business</b> ✦ Web Design ✦ <b>Development</b> ✦ Responsive UI ✦ <b>SEO Ready</b> ✦ Landing Pages ✦ <b>Digital Business</b> ✦ Web Design ✦ <b>Development</b> ✦ Responsive UI ✦ <b>SEO Ready</b> ✦ Landing Pages ✦</div></div>
+
+<section><div class="wrap"><div class="digitalBanner reveal"><div class="eyebrow">The digital shift</div><h2>The world is becoming digital.<br><span class="gold">Make your business digital.</span></h2><p>Your customers are already online. A professional website gives your business a place to be discovered, understood and trusted — day and night.</p><a class="btn primary" href="#contact">Take Your Business Online ↗</a></div></div></section>
+
+<section id="services"><div class="wrap"><div class="head reveal"><div><div class="eyebrow">01 — Services</div><h2>Everything your<br>business needs online.</h2></div><p>From a simple business website to advanced digital experiences, I build with your goals in mind.</p></div>
+<div class="grid3">
+<article class="card reveal"><span class="num">01</span><div class="icon">⌘</div><h3>Business Websites</h3><p>Premium websites for restaurants, salons, shops, agencies, startups and local businesses.</p></article>
+<article class="card reveal"><span class="num">02</span><div class="icon">↗</div><h3>Landing Pages</h3><p>High-impact pages designed around one clear goal: enquiries, calls, bookings or sales.</p></article>
+<article class="card reveal"><span class="num">03</span><div class="icon">◇</div><h3>UI / UX Design</h3><p>Clean layouts, strong hierarchy and intuitive experiences that feel premium on every screen.</p></article>
+<article class="card reveal"><span class="num">04</span><div class="icon">⚡</div><h3>Speed & Mobile</h3><p>Responsive websites that remain polished across phones, tablets, laptops and desktops.</p></article>
+<article class="card reveal"><span class="num">05</span><div class="icon">⌕</div><h3>SEO Foundation</h3><p>Semantic structure, metadata and search-friendly foundations for better discoverability.</p></article>
+<article class="card reveal"><span class="num">06</span><div class="icon">∞</div><h3>Support & Updates</h3><p>Keep your website fresh with content updates, improvements and ongoing support.</p></article>
+</div></div></section>
+
+<section id="work"><div class="wrap"><div class="head reveal"><div><div class="eyebrow">02 — Portfolio</div><h2>Selected work.<br>Built to stand out.</h2></div><p>Filter projects, open details and manage your work from the private admin panel.</p></div>
+<div class="filters"><button class="active" data-filter="all">All</button><button data-filter="business">Business</button><button data-filter="restaurant">Restaurant</button><button data-filter="portfolio">Portfolio</button></div><div class="projects" id="projects"></div></div></section>
+
+<section id="about"><div class="wrap about"><div class="reveal"><div class="eyebrow">03 — About</div><h2 style="font:600 clamp(36px,5vw,62px)/1 'Manrope';letter-spacing:-.07em">Technology meets<br><span class="gold">creative thinking.</span></h2><p>I combine development and visual design to make websites that communicate clearly, feel premium and guide visitors toward action.</p><div class="checks"><div class="check"><span>✦</span> Custom design — not generic templates</div><div class="check"><span>✦</span> Mobile-first responsive experience</div><div class="check"><span>✦</span> Clean HTML, CSS and JavaScript</div><div class="check"><span>✦</span> Business-focused user journeys</div></div></div>
+<div class="process reveal"><div class="step"><div class="stepno">01</div><div><h4>Discover</h4><p>Understand your business, audience and goals.</p></div></div><div class="step"><div class="stepno">02</div><div><h4>Design</h4><p>Create the visual direction and structure.</p></div></div><div class="step"><div class="stepno">03</div><div><h4>Develop</h4><p>Turn the design into responsive, functional code.</p></div></div><div class="step"><div class="stepno">04</div><div><h4>Launch & Grow</h4><p>Test, launch and improve your digital presence.</p></div></div></div></div></section>
+
+<section id="pricing"><div class="wrap"><div class="head reveal"><div><div class="eyebrow">04 — Pricing</div><h2>Simple packages.<br>Built for growth.</h2></div><p>Starting prices for common projects. Custom requirements can be discussed directly.</p></div>
+<div class="prices"><article class="card price reveal"><div class="eyebrow">Starter</div><h3>Basic Website</h3><div class="priceValue" id="priceStarter">₹4,999 <small>starting</small></div><ul class="features"><li>1–3 pages</li><li>Responsive design</li><li>WhatsApp / contact CTA</li><li>Basic SEO structure</li><li>Custom styling</li></ul><a class="btn secondary" href="#contact">Get Started ↗</a></article>
+<article class="card price reveal" style="border-color:rgba(213,177,106,.45)"><span class="popular">POPULAR</span><div class="eyebrow">Business</div><h3>Professional Website</h3><div class="priceValue" id="priceBusiness">₹9,999 <small>starting</small></div><ul class="features"><li>Up to 6 pages</li><li>Premium custom design</li><li>Animations & interactions</li><li>SEO-ready structure</li><li>Lead / enquiry flow</li></ul><a class="btn primary" href="#contact">Choose Business ↗</a></article>
+<article class="card price reveal"><div class="eyebrow">Custom</div><h3>Advanced Website</h3><div class="priceValue" id="priceAdvanced">Let's Talk</div><ul class="features"><li>Booking systems</li><li>Ordering systems</li><li>Custom functionality</li><li>Integrations</li><li>Ongoing support</li></ul><a class="btn secondary" href="#contact">Discuss Project ↗</a></article></div></div></section>
+
+<section id="contact"><div class="wrap"><div class="contact reveal"><div><div class="eyebrow">05 — Contact</div><h2>Ready to make your<br>business <span class="gold">digital?</span></h2><p>Send your details. The form prepares a professional WhatsApp enquiry automatically.</p><div class="contactInfo"><a href="tel:+9779820221555"><b>PHONE</b> +977 9820221555</a><a href="#" id="copyPhone"><b>QUICK ACTION</b> Copy phone number</a><a href="https://wa.me/9779820221555" target="_blank"><b>WHATSAPP</b> Chat directly ↗</a></div></div>
+<form id="contactForm"><input id="cname" required placeholder="Your name"><input id="cphone" required placeholder="Your phone / WhatsApp number"><input id="cbusiness" placeholder="Business / brand name"><textarea id="cmsg" required placeholder="Tell me about your website..."></textarea><button class="btn primary" type="submit">Send on WhatsApp ↗</button></form></div></div></section>
+</main>
+
+<footer class="footer"><div class="wrap footerin"><span>© 2026 SUSHANT YADAV. All rights reserved.</span><span>Design · Development · Digital Presence</span></div></footer>
+<button class="top" id="top">↑</button><div class="toast" id="toast"></div>
+
+
+<div class="websitePreview" id="websitePreview">
+  <div class="websitePreviewHead">
+    <b id="websitePreviewTitle">Website Preview</b>
+    <div class="adminActions">
+      <button class="btn secondary mini" id="openPreviewTab">Open in New Tab ↗</button>
+      <button class="btn secondary mini" id="closeWebsitePreview">Close ×</button>
+    </div>
+  </div>
+  <iframe class="websiteFrame" id="websiteFrame" sandbox="allow-scripts allow-forms allow-modals allow-popups"></iframe>
+</div>
+
+<div class="modal" id="projectModal"><div class="modalBox"><button class="close" data-close="projectModal">×</button><div class="eyebrow">Project Details</div><h3 id="mTitle"></h3><p id="mDesc"></p><ul><li>Responsive across devices</li><li>Premium visual interface</li><li>Clear calls-to-action</li><li>Custom branding and content</li></ul><a href="#contact" class="btn primary" data-close="projectModal">Start Similar Project ↗</a></div></div>
+
+
+<div class="settingsOverlay" id="settingsOverlay">
+  <div class="settingsDrawer">
+    <button class="close settingsClose" id="settingsClose">×</button>
+    <div class="eyebrow">SUSHANT YADAV / SETTINGS</div>
+    <h3>Website Settings</h3>
+    <p class="settingsIntro">Customize the website appearance and access your private portfolio manager.</p>
+
+    <div class="settingSection">
+      <div class="settingTitle"><span>Appearance</span><small>LIVE</small></div>
+      <div class="settingRow">
+        <div><b>Premium theme</b><span>Switch between dark luxury and light premium.</span></div>
+        <select id="quickMode"><option value="dark">Dark Luxury</option><option value="light">Light Premium</option></select>
+      </div>
+      <div class="settingRow">
+        <div><b>Accent colour</b><span>Change the gold accent used across the website.</span></div>
+        <input type="color" id="quickAccent" value="#d5b16a">
+      </div>
+    </div>
+
+    <div class="settingSection">
+      <div class="settingTitle"><span>Portfolio</span><small>MANAGE</small></div>
+      <div class="adminLaunch">
+        <div class="adminShield">⌘</div>
+        <div><b>Admin Portfolio Panel</b><span>Upload website samples, screenshots, projects and manage your portfolio.</span></div>
+        <button class="btn primary mini" id="openAdminLogin">Open ↗</button>
+      </div>
+    </div>
+
+    <div class="settingSection">
+      <div class="settingTitle"><span>Contact</span><small>PUBLIC</small></div>
+      <div class="settingRow">
+        <div><b>Phone</b><span>Displayed on the website and WhatsApp CTA.</span></div>
+        <strong class="settingValue">+977 9820221555</strong>
+      </div>
+    </div>
+
+    <div class="settingsNote">Tip: your editable content is stored in the server database. Keep regular backups before making major changes.</div>
+  </div>
+</div>
+
+<div class="loginModal" id="loginModal"><div class="loginBox"><button class="close" data-close="loginModal">×</button><div class="eyebrow">Private Area</div><h3>Admin Login</h3><p>Manage portfolio, profile, appearance, SEO, services and website settings.</p><div id="loginForm" autocomplete="off">
+<input id="adminUser" type="text" autocomplete="off" autocapitalize="none" spellcheck="false" placeholder="Username">
+<input id="adminPass" type="password" autocomplete="new-password" placeholder="Password">
+<div class="error" id="loginError"></div>
+<button class="btn primary" id="adminLoginButton" type="button">Open Admin Panel ↗</button>
+</div></div></div>
+
+<div class="admin" id="adminPanel"><div class="adminWrap">
+<div class="adminTop"><div><div class="eyebrow">SUSHANT YADAV / ADMIN</div><h2>Digital Control Center</h2><div style="font-size:10px;color:var(--muted);margin-top:5px">Settings → Admin Portfolio → Upload & manage your work</div></div><div class="adminActions"><button class="btn secondary mini" id="viewSite">View Website ↗</button><button class="btn secondary mini" id="exportData">Export Backup</button><button class="btn secondary mini" id="logout">Logout</button></div></div>
+<div class="adminGrid"><aside class="side">
+<button class="sideBtn active" data-panel="dashboard">Dashboard</button><button class="sideBtn" data-panel="profile">Profile & Contact</button><button class="sideBtn" data-panel="works">Portfolio Manager</button><button class="sideBtn" data-panel="servicesAdmin">Services Manager</button><button class="sideBtn" data-panel="appearance">Appearance</button><button class="sideBtn" data-panel="seo">SEO & Browser</button><button class="sideBtn" data-panel="backup">Backup & Data</button><button class="sideBtn" data-panel="security">Security</button>
+</aside><div>
+
+<div class="panel active" id="dashboard"><h3>Dashboard</h3><p>Manage your server-backed portfolio website from one place.</p><div class="adminStats"><div class="adminStat"><strong id="countWorks">0</strong><span>Portfolio items</span></div><div class="adminStat"><strong id="dashPublished">0</strong><span>Published</span></div><div class="adminStat"><strong id="dashEnquiries">0</strong><span>Enquiries</span></div><div class="adminStat"><strong id="dashVisits">0</strong><span>Visits</span></div></div><div class="adminCard" style="margin-top:11px"><label>QUICK ACTIONS</label><div class="adminActions"><button class="btn primary mini" data-goto="works">+ Add Work</button><button class="btn secondary mini" data-goto="profile">Edit Profile</button><button class="btn secondary mini" data-goto="servicesAdmin">Edit Services</button><button class="btn secondary mini" data-goto="appearance">Appearance</button></div></div></div>
+
+<div class="panel" id="profile"><h3>Profile & Contact</h3><p>Update your public information and contact details.</p><div class="adminCards"><div class="adminCard"><label>FULL NAME</label><input id="setName"></div><div class="adminCard"><label>PHONE</label><input id="setPhone"></div><div class="adminCard"><label>WHATSAPP NUMBER</label><input id="setWa"></div><div class="adminCard"><label>EMAIL</label><input id="setEmail"></div><div class="adminCard full"><label>HERO / ABOUT BIO</label><textarea id="setBio"></textarea></div></div><button class="btn primary" id="saveProfile" style="margin-top:11px">Save Profile</button></div>
+
+<div class="panel" id="works"><h3>Portfolio Manager</h3><p>Add, edit, delete and upload project images. Your changes are stored in the server database.</p><div id="workList"></div>
+<div class="adminCard" style="margin-bottom:12px;border-color:rgba(213,177,106,.28)">
+  <div class="eyebrow">Website Upload Studio</div>
+  <h4 style="font:600 18px 'Manrope';margin-bottom:6px">Upload a website you already made</h4>
+  <p style="color:var(--muted);font-size:10px;line-height:1.65;margin-bottom:12px">
+    Upload a single <b>.html</b> file for instant preview, or upload a <b>.zip</b> containing your HTML, CSS, JavaScript and images.
+    The uploaded website becomes a portfolio project and can be opened in a live preview. Saving now publishes it immediately to the main portfolio.
+  </p>
+  <div class="uploadBox">
+    Choose your website file
+    <input id="websiteUpload" type="file" accept=".html,.htm,.zip">
+  </div>
+  <div id="websiteUploadStatus" style="font-size:10px;color:var(--muted);margin-top:9px;min-height:15px"></div>
+  <div class="adminActions">
+    <button class="btn primary mini" id="saveUploadedWebsite">Publish Website to Portfolio</button>
+    <button class="btn secondary mini" id="clearUploadedWebsite">Clear Upload</button>
+  </div>
+</div>
+
+<div class="adminCard" style="margin-top:12px"><div class="eyebrow">Add / Edit Project</div><div class="adminCards"><div class="adminCard"><label>TITLE</label><input id="wTitle" placeholder="Website Project"></div><div class="adminCard"><label>CATEGORY</label><select id="wCat"><option value="business">Business</option><option value="restaurant">Restaurant</option><option value="portfolio">Portfolio</option></select></div><div class="adminCard full"><label>DESCRIPTION</label><textarea id="wDesc" placeholder="Project description"></textarea></div><div class="adminCard"><label>PUBLISH ON MAIN WEBSITE</label><input id="wPublished" type="checkbox" checked style="width:18px;height:18px;accent-color:var(--gold)"></div><div class="adminCard full"><label>IMAGE</label><div class="uploadBox">Choose an image<input id="wImage" type="file" accept="image/*"></div></div></div><div class="adminActions"><button class="btn primary mini" id="saveWork">Save Project</button><button class="btn secondary mini" id="clearWork">Clear</button></div></div></div>
+
+<div class="panel" id="pricingAdmin"><h3>Pricing Manager</h3><p>Change your public prices without editing HTML.</p><div id="pricingEditor"></div></div>
+<div class="panel" id="enquiriesAdmin"><h3>Customer Enquiries</h3><p>Every contact form submission is saved in the database.</p><div id="enquiryList"></div></div>
+<div class="panel" id="servicesAdmin"><h3>Services Manager</h3><p>Edit service titles and descriptions shown on the public website.</p><div id="serviceEditor"></div><button class="btn primary" id="saveServices" style="margin-top:11px">Save Services</button></div>
+
+<div class="panel" id="appearance"><h3>Appearance & Hero</h3><p>Control the visual identity and hero message.</p><div class="adminCards"><div class="adminCard"><label>ACCENT COLOR</label><input type="color" id="accent" style="height:42px;padding:3px"></div><div class="adminCard"><label>DISPLAY MODE</label><select id="mode"><option value="dark">Dark Premium</option><option value="light">Light Premium</option></select></div><div class="adminCard full"><label>HERO HEADLINE</label><input id="setHeadline"></div><div class="adminCard"><label>SHOW DIGITAL BANNER</label><input id="showBanner" type="checkbox" style="width:18px;height:18px;accent-color:var(--gold)"></div><div class="adminCard"><label>ANIMATIONS</label><input id="showAnimations" type="checkbox" style="width:18px;height:18px;accent-color:var(--gold)"></div></div><button class="btn primary" id="saveAppearance" style="margin-top:11px">Apply Appearance</button></div>
+
+<div class="panel" id="seo"><h3>SEO & Browser</h3><p>Control basic search metadata and browser behavior.</p><div class="adminCards"><div class="adminCard full"><label>PAGE TITLE</label><input id="setTitle"></div><div class="adminCard full"><label>META DESCRIPTION</label><textarea id="setDesc"></textarea></div><div class="adminCard"><label>ENABLE SCROLL TO TOP</label><input id="scrollTopSetting" type="checkbox" style="width:18px;height:18px;accent-color:var(--gold)"></div></div><button class="btn primary" id="saveSeo" style="margin-top:11px">Save SEO Settings</button></div>
+
+<div class="panel" id="security"><h3>Security & Account</h3><p>Change your admin password before putting the website online.</p><div class="adminCard"><label>CURRENT PASSWORD</label><input id="currentPass" type="password" autocomplete="current-password"><label style="margin-top:10px">NEW PASSWORD</label><input id="newPass" type="password" autocomplete="new-password"><label style="margin-top:10px">CONFIRM NEW PASSWORD</label><input id="confirmPass" type="password" autocomplete="new-password"><button class="btn primary" id="changePassword" style="margin-top:11px">Change Password</button></div></div>
+<div class="panel" id="backup"><h3>Backup & Data</h3><p>Export your website settings and portfolio as a JSON backup, or import a previous backup.</p><div class="adminCard"><label>EXPORT</label><p>Save a backup file containing your editable settings and portfolio information.</p><button class="btn primary mini" id="exportData2">Download Backup JSON</button></div><div class="adminCard" style="margin-top:10px"><label>IMPORT</label><p>Choose a backup JSON file previously exported from this admin panel.</p><input id="importFile" type="file" accept=".json"><button class="btn primary mini" id="importBackup" style="margin-top:10px">Restore Selected Backup</button></div><div class="adminCard" style="margin-top:10px"><label>DANGER ZONE</label><p>Restore the default portfolio content and settings.</p><button class="btn secondary mini danger" id="resetData">Reset Website Data</button></div></div>
+
+</div></div></div></div>
+
+
+<script>
+const $=id=>document.getElementById(id);
+let data={name:"SUSHANT YADAV",phone:"+9779820221555",wa:"9779820221555",email:"",bio:"Premium websites, modern interfaces and digital experiences built with clean code, strong visual design and a focus on helping businesses grow online.",accent:"#d5b16a",mode:"dark",headline:"I'm SUSHANT YADAV. I build the future.",title:"SUSHANT YADAV — Digital Web Developer",desc:"SUSHANT YADAV — premium websites and digital experiences for modern businesses.",showBanner:true,showAnimations:true,scrollTop:true,services:[["Business Websites","Premium websites for restaurants, salons, shops, agencies, startups and local businesses.","⌘"],["Landing Pages","High-impact pages designed around one clear goal: enquiries, calls, bookings or sales.","↗"],["UI / UX Design","Clean layouts, strong hierarchy and intuitive experiences that feel premium on every screen.","◇"],["Speed & Mobile","Responsive websites that remain polished across phones, tablets, laptops and desktops.","⚡"],["SEO Foundation","Semantic structure, metadata and search-friendly foundations for better discoverability.","⌕"],["Support & Updates","Keep your website fresh with content updates, improvements and ongoing support.","∞"]],works:[],pricing:{starter:{price_text:"₹4,999",suffix:"starting"},business:{price_text:"₹9,999",suffix:"starting"},advanced:{price_text:"Let's Talk",suffix:""}}};
+let editId=null,currentPreview="";
+async function api(url,options={}){const r=await fetch(url,{credentials:"same-origin",...options});let j={};try{j=await r.json()}catch{}if(!r.ok)throw new Error(j.error||"Request failed");return j}
+function toast(t){const x=$("toast");if(!x)return;x.textContent=t;x.classList.add("show");setTimeout(()=>x.classList.remove("show"),2200)}
+function renderPricing(){const p=data.pricing||{};const set=(id,key)=>{const el=$(id),q=p[key];if(el&&q)el.innerHTML=esc(q.price_text)+(q.suffix?` <small>${esc(q.suffix)}</small>`:"")};set("priceStarter","starter");set("priceBusiness","business");set("priceAdvanced","advanced")}
+function apply(){
+ document.documentElement.style.setProperty("--gold",data.accent||"#d5b16a");
+ document.documentElement.style.setProperty("--gold2",data.accent||"#d5b16a");
+ document.body.classList.toggle("light",data.mode==="light");
+ document.title=data.title||"SUSHANT YADAV — Digital Web Developer";
+ const brand=document.querySelector(".brand"); if(brand) brand.innerHTML=esc(data.name||"SUSHANT YADAV").split(" ")[0]+"<i>.</i>";
+ const h=document.querySelector("h1"); if(h) h.innerHTML=escapeHeadline(data.headline||"I'm SUSHANT YADAV. I build the future.");
+ const bio=document.querySelector(".heroText"); if(bio) bio.textContent=data.bio||"";
+ const phoneLinks=document.querySelectorAll('a[href^="tel:"],#dashPhone'); phoneLinks.forEach(x=>{if(x.tagName==="A"){x.href="tel:"+data.phone.replace(/\s/g,"");const b=x.querySelector("b");x.innerHTML=(b?b.outerHTML:"")+" "+esc(data.phone)}else x.textContent=data.phone});
+ const wa=document.querySelector('a[href*="wa.me/"]'); if(wa) wa.href="https://wa.me/"+(data.wa||"").replace(/\D/g,"");
+ const meta=document.querySelector('meta[name="description"]'); if(meta) meta.content=data.desc||"";
+ const banner=document.querySelector(".digitalBanner"); if(banner) banner.closest("section").style.display=data.showBanner===false?"none":"";
+ renderWorks("all"); renderServices(); renderPricing();
+ if($("countWorks"))$("countWorks").textContent=data.works.length;if($("dashPublished"))$("dashPublished").textContent=data.stats?.published??data.works.filter(x=>x.published).length;if($("dashEnquiries"))$("dashEnquiries").textContent=data.stats?.enquiries??0;if($("dashVisits"))$("dashVisits").textContent=data.stats?.visits??0;
+ if($("quickMode"))$("quickMode").value=data.mode;
+ if($("quickAccent"))$("quickAccent").value=data.accent;
+ if($("theme"))$("theme").textContent=data.mode==="light"?"☾":"☼";
+ $("top")?.classList.toggle("show",data.scrollTop&&scrollY>500);
+ document.querySelectorAll(".reveal").forEach(x=>{if(!data.showAnimations)x.classList.add("on")});
+}
+function esc(v){return String(v??"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;")}
+function escapeHeadline(v){
+ let s=esc(v);
+ s=s.replace(/SUSHANT/gi,'<span class="gold">SUSHANT</span>');
+ s=s.replace(/future/gi,'<span class="gold">future.</span>');
+ return s.replace(/\. <span class="gold">future\.<\/span>/,".<br>I build the <span class=\"gold\">future.</span>");
+}
+function renderWorks(filter="all"){
+ const box=$("projects");if(!box)return;box.innerHTML="";
+ const list=data.works.filter(w=>w.published!==false&&(filter==="all"||w.cat===filter));
+ list.forEach((w,i)=>{
+  const a=document.createElement("article");a.className="card project reveal"+(i===0?" big":"");
+  a.innerHTML=`<img src="${esc(w.image||"https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1000&q=85")}" alt="${esc(w.title)}"><div class="projectInfo"><small>${esc(w.cat||"business")} • SUSHANT YADAV</small><h3>${esc(w.title)}</h3><p>${esc(w.desc||"Website project by SUSHANT YADAV.")}</p><div class="tags"><span class="tag">Responsive</span><span class="tag">${w.website_url?"Live Website":"Premium UI"}</span><span class="tag">Custom</span></div><button class="btn secondary details" style="margin-top:10px">${w.website_url?"Open Website ↗":"View Details ↗"}</button></div>`;
+  a.querySelector(".details").onclick=()=>w.website_url?window.open(w.website_url,"_blank","noopener"):showDetails(w);
+  box.appendChild(a);
+  if(data.showAnimations&&window.observer)window.observer.observe(a);
+ });
+}
+function showDetails(w){$("mTitle").textContent=w.title;$("mDesc").textContent=w.desc||"";$("projectModal").classList.add("show")}
+function renderServices(){
+ const box=document.querySelector(".grid3");if(!box)return;box.innerHTML="";
+ data.services.forEach((s,i)=>{const a=document.createElement("article");a.className="card reveal";a.innerHTML=`<span class="num">0${i+1}</span><div class="icon">${esc(s[2]||"✦")}</div><h3>${esc(s[0])}</h3><p>${esc(s[1])}</p>`;box.appendChild(a);if(data.showAnimations&&window.observer)window.observer.observe(a)})
+}
+function loadAdmin(){
+ $("setName").value=data.name||"";$("setPhone").value=data.phone||"";$("setWa").value=data.wa||"";$("setEmail").value=data.email||"";$("setBio").value=data.bio||"";
+ $("accent").value=data.accent||"#d5b16a";$("mode").value=data.mode||"dark";$("setHeadline").value=data.headline||"";
+ $("setTitle").value=data.title||"";$("setDesc").value=data.desc||"";$("showBanner").checked=data.showBanner!==false;$("showAnimations").checked=data.showAnimations!==false;$("scrollTopSetting").checked=data.scrollTop!==false;
+ renderAdminWorks();renderServiceEditor();
+}
+function renderAdminWorks(){
+ const box=$("workList");if(!box)return;
+ box.innerHTML=data.works.map(w=>`<div class="workRow"><div><b>${esc(w.title)}</b><small>${esc(w.cat||"business")} · ${w.website_url?"Live website":"Project sample"}</small></div><div class="adminActions">${w.website_url?`<button class="btn secondary mini previewWork" data-url="${esc(w.website_url)}">Preview</button>`:""}<button class="btn secondary mini editWork" data-id="${w.id}">Edit</button><button class="btn secondary mini danger deleteWork" data-id="${w.id}">Delete</button></div></div>`).join("")||'<div class="adminCard"><p>No projects yet.</p></div>';
+ box.querySelectorAll(".deleteWork").forEach(b=>b.onclick=async()=>{if(!confirm("Delete this project and its uploaded website files?"))return;try{await api("/api/projects/"+b.dataset.id,{method:"DELETE"});await refreshAdmin();toast("Project deleted")}catch(e){toast(e.message)}});
+ box.querySelectorAll(".editWork").forEach(b=>b.onclick=()=>{const w=data.works.find(x=>x.id==b.dataset.id);if(!w)return;editId=w.id;$("wTitle").value=w.title;$("wCat").value=w.cat||"business";$("wDesc").value=w.desc||"";$("wPublished").checked=w.published!==false;toast("Project loaded for editing")});
+ box.querySelectorAll(".previewWork").forEach(b=>b.onclick=()=>window.open(b.dataset.url,"_blank","noopener"));
+}
+function renderPricingEditor(){const box=$("pricingEditor");if(!box)return;box.innerHTML=(data.pricing||[]).map(p=>`<div class="adminCard" style="margin-bottom:10px"><label>${esc(p.package_name||p.package_key)}</label><div class="adminCards"><div class="adminCard"><label>NAME</label><input class="priceName" data-id="${p.id}" value="${esc(p.package_name)}"></div><div class="adminCard"><label>PRICE</label><input class="priceText" data-id="${p.id}" value="${esc(p.price_text)}"></div><div class="adminCard"><label>SUFFIX</label><input class="priceSuffix" data-id="${p.id}" value="${esc(p.suffix||"")}"></div></div><button class="btn primary mini savePrice" data-id="${p.id}">Save Price</button></div>`).join("")||'<div class="adminCard">No pricing packages.</div>';box.querySelectorAll('.savePrice').forEach(b=>b.onclick=async()=>{const id=Number(b.dataset.id),p=(data.pricing||[]).find(x=>x.id===id);try{const j=await api('/api/admin/pricing',{method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify({id,package_name:document.querySelector('.priceName[data-id="'+id+'"]').value,price_text:document.querySelector('.priceText[data-id="'+id+'"]').value,suffix:document.querySelector('.priceSuffix[data-id="'+id+'"]').value,description:p.description||''})});data=j.data||data;apply();toast('Price updated') }catch(e){toast(e.message)}})}
+function renderEnquiries(){const box=$("enquiryList");if(!box)return;box.innerHTML=(data.enquiries||[]).map(q=>`<div class="workRow"><div><b>${esc(q.name)}</b><small>${esc(q.phone)}${q.business?' · '+esc(q.business):''} · ${esc(q.created_at)}</small><p style="margin-top:6px;color:var(--muted);font-size:11px">${esc(q.message||'No message')}</p></div><div class="adminActions"><select class="inqStatus" data-id="${q.id}"><option ${q.status==='new'?'selected':''}>new</option><option ${q.status==='contacted'?'selected':''}>contacted</option><option ${q.status==='closed'?'selected':''}>closed</option></select><button class="btn secondary mini updateInquiry" data-id="${q.id}">Save</button><button class="btn secondary mini danger deleteInquiry" data-id="${q.id}">Delete</button></div></div>`).join("")||'<div class="adminCard"><p>No enquiries yet.</p></div>';box.querySelectorAll('.updateInquiry').forEach(b=>b.onclick=async()=>{const id=Number(b.dataset.id),v=document.querySelector('.inqStatus[data-id="'+id+'"]').value;try{await api('/api/admin/enquiries',{method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify({id,status:v})});await refreshAdmin();toast('Enquiry updated')}catch(e){toast(e.message)}});box.querySelectorAll('.deleteInquiry').forEach(b=>b.onclick=async()=>{if(!confirm('Delete this enquiry?'))return;try{await api('/api/admin/enquiries',{method:'DELETE',headers:{'Content-Type':'application/json'},body:JSON.stringify({id:Number(b.dataset.id)})});await refreshAdmin();toast('Enquiry deleted')}catch(e){toast(e.message)}})}
+function renderServiceEditor(){const box=$("serviceEditor");if(!box)return;box.innerHTML=data.services.map((s,i)=>`<div class="adminCard" style="margin-bottom:9px"><label>SERVICE ${i+1}</label><input class="svcTitle" data-i="${i}" value="${esc(s[0])}"><textarea class="svcDesc" data-i="${i}">${esc(s[1])}</textarea></div>`).join("")}
+async function refreshPublic(){data=await api("/api/public-data");apply()}
+async function refreshAdmin(){return api("/api/admin/data").then(d=>{data=d;loadAdmin();renderPricingEditor();renderEnquiries();apply()})}
+function previewWebsite(w){if(!w||!w.website_url){toast("No uploaded website");return}currentPreview=w.website_url;$("websitePreviewTitle").textContent=w.title+" — Live Website";$("websiteFrame").src=w.website_url;$("websitePreview").classList.add("show")}
+function downloadBackup(){
+ api("/api/admin/data").then(d=>{const blob=new Blob([JSON.stringify(d,null,2)],{type:"application/json"}),a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="sushant-website-backup.json";a.click();setTimeout(()=>URL.revokeObjectURL(a.href),500);toast("Backup downloaded")}).catch(e=>toast(e.message))
+}
+async function init(){try{fetch("/api/visit",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({path:location.pathname})})}catch{}
+ const observerLocal=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add("on")}),{threshold:.08});window.observer=observerLocal;
+ document.querySelectorAll(".reveal").forEach(x=>observerLocal.observe(x));
+ $("hamb")?.addEventListener("click",()=>$("navlinks")?.classList.toggle("open"));
+ document.querySelectorAll(".navlinks a").forEach(a=>a.addEventListener("click",()=>$("navlinks")?.classList.remove("open")));
+ $("theme")?.addEventListener("click",async()=>{data.mode=data.mode==="light"?"dark":"light";try{await api("/api/admin/settings",{method:"PUT",headers:{"Content-Type":"application/json"},body:JSON.stringify({mode:data.mode})});apply()}catch(e){toast(e.message)}});
+ $("top")?.addEventListener("click",()=>scrollTo({top:0,behavior:"smooth"}));
+ window.addEventListener("scroll",()=>{$("nav")?.classList.toggle("scrolled",scrollY>15);$("top")?.classList.toggle("show",!!data.scrollTop&&scrollY>500)});
+ document.querySelectorAll(".filters button").forEach(b=>b.addEventListener("click",()=>{document.querySelectorAll(".filters button").forEach(x=>x.classList.remove("active"));b.classList.add("active");renderWorks(b.dataset.filter)}));
+ $("copyPhone")?.addEventListener("click",e=>{e.preventDefault();navigator.clipboard?.writeText(data.phone);toast("Phone number copied")});
+ $("contactForm")?.addEventListener("submit",async e=>{e.preventDefault();const payload={name:$("cname").value.trim(),phone:$("cphone").value.trim(),business:$("cbusiness").value.trim(),message:$("cmsg").value.trim()};try{await api("/api/enquiries",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)});const text=`Hi Sushant, I want to discuss a website project.\n\nName: ${payload.name}\nPhone: ${payload.phone}\nBusiness: ${payload.business}\nProject: ${payload.message}`;window.open("https://wa.me/"+(data.wa||"").replace(/\D/g,"")+"?text="+encodeURIComponent(text),"_blank","noopener");toast("Enquiry saved — opening WhatsApp") }catch(err){toast(err.message)}});
+ document.querySelectorAll("[data-close]").forEach(b=>b.addEventListener("click",()=>$(b.dataset.close)?.classList.remove("show")));
+ $("settingsBtn")?.addEventListener("click",()=>{$("settingsOverlay")?.classList.add("show");$("quickMode").value=data.mode;$("quickAccent").value=data.accent});
+ $("settingsClose")?.addEventListener("click",()=>$("settingsOverlay")?.classList.remove("show"));
+ $("settingsOverlay")?.addEventListener("click",e=>{if(e.target.id==="settingsOverlay")e.target.classList.remove("show")});
+ $("quickMode")?.addEventListener("change",async e=>{try{await api("/api/admin/settings",{method:"PUT",headers:{"Content-Type":"application/json"},body:JSON.stringify({mode:e.target.value})});data.mode=e.target.value;apply()}catch(err){toast("Login required to change settings")}});
+ $("quickAccent")?.addEventListener("change",async e=>{try{await api("/api/admin/settings",{method:"PUT",headers:{"Content-Type":"application/json"},body:JSON.stringify({accent:e.target.value})});data.accent=e.target.value;apply()}catch(err){toast("Login required to change settings")}});
+ $("openAdminLogin")?.addEventListener("click",()=>{$("settingsOverlay")?.classList.remove("show");$("loginModal")?.classList.add("show");$("loginError").textContent="";setTimeout(()=>$("adminUser")?.focus(),100)});
+ async function adminLogin(){try{await api("/api/login",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({username:$("adminUser").value.trim(),password:$("adminPass").value})});$("loginModal").classList.remove("show");$("adminPanel").classList.add("show");document.body.style.overflow="hidden";await refreshAdmin()}catch(e){$("loginError").textContent=e.message;$("adminPass").focus()}}
+ $("adminLoginButton")?.addEventListener("click",adminLogin);$("adminPass")?.addEventListener("keydown",e=>{if(e.key==="Enter"){e.preventDefault();adminLogin()}});
+ $("logout")?.addEventListener("click",async()=>{try{await api("/api/logout",{method:"POST"})}catch{}$("adminPanel").classList.remove("show");document.body.style.overflow=""});
+ $("viewSite")?.addEventListener("click",()=>{$("adminPanel").classList.remove("show");document.body.style.overflow=""});
+ document.querySelectorAll(".sideBtn").forEach(b=>b.addEventListener("click",()=>{document.querySelectorAll(".sideBtn").forEach(x=>x.classList.remove("active"));b.classList.add("active");document.querySelectorAll(".panel").forEach(x=>x.classList.remove("active"));$(b.dataset.panel)?.classList.add("active")}));
+ document.querySelectorAll("[data-goto]").forEach(b=>b.addEventListener("click",()=>document.querySelector('.sideBtn[data-panel="'+b.dataset.goto+'"]')?.click()));
+ $("saveProfile")?.addEventListener("click",async()=>{try{const j=await api("/api/admin/settings",{method:"PUT",headers:{"Content-Type":"application/json"},body:JSON.stringify({name:$("setName").value,phone:$("setPhone").value,wa:$("setWa").value,email:$("setEmail").value,bio:$("setBio").value})});data=j.data||data;apply();toast("Profile saved")}catch(e){toast(e.message)}});
+ $("saveAppearance")?.addEventListener("click",async()=>{try{const j=await api("/api/admin/settings",{method:"PUT",headers:{"Content-Type":"application/json"},body:JSON.stringify({accent:$("accent").value,mode:$("mode").value,headline:$("setHeadline").value,showBanner:$("showBanner").checked,showAnimations:$("showAnimations").checked})});data=j.data||data;apply();toast("Appearance updated")}catch(e){toast(e.message)}});
+ $("saveSeo")?.addEventListener("click",async()=>{try{const j=await api("/api/admin/settings",{method:"PUT",headers:{"Content-Type":"application/json"},body:JSON.stringify({title:$("setTitle").value,desc:$("setDesc").value,scrollTop:$("scrollTopSetting").checked})});data=j.data||data;apply();toast("SEO settings saved")}catch(e){toast(e.message)}});
+ $("saveServices")?.addEventListener("click",async()=>{try{const services=data.services.map((s,i)=>[document.querySelector('.svcTitle[data-i="'+i+'"]').value,document.querySelector('.svcDesc[data-i="'+i+'"]').value,s[2]]);const j=await api("/api/admin/services",{method:"PUT",headers:{"Content-Type":"application/json"},body:JSON.stringify({services})});data=j.data||data;apply();toast("Services saved")}catch(e){toast(e.message)}});
+ $("clearWork")?.addEventListener("click",()=>{editId=null;$("wTitle").value="";$("wDesc").value="";$("wImage").value="";$("wPublished").checked=true});
+ $("saveWork")?.addEventListener("click",async()=>{try{const fd=new FormData();fd.append("title",$("wTitle").value.trim());fd.append("cat",$("wCat").value);fd.append("desc",$("wDesc").value.trim());fd.append("published",$("wPublished").checked?"1":"0");if($("wImage").files[0])fd.append("image",$("wImage").files[0]);const wasEdit=!!editId;const url=wasEdit?"/api/projects/"+editId:"/api/projects";const j=await api(url,{method:wasEdit?"PUT":"POST",body:fd});editId=null;data=j.data;renderAdminWorks();apply();$("clearWork").click();toast(wasEdit?"Project updated":"Project saved")}catch(e){toast(e.message)}});
+ $("websiteUpload")?.addEventListener("change",e=>{const f=e.target.files[0];$("websiteUploadStatus").textContent=f?"✓ "+f.name+" ready to publish":"No file selected"});
+ $("clearUploadedWebsite")?.addEventListener("click",()=>{$("websiteUpload").value="";$("websiteUploadStatus").textContent=""});
+ $("saveUploadedWebsite")?.addEventListener("click",async()=>{try{const f=$("websiteUpload").files[0];if(!f){toast("Choose an HTML or ZIP website first");return}const fd=new FormData();fd.append("website",f);fd.append("title",f.name.replace(/\.(html?|zip)$/i,"").replace(/[_-]+/g," "));fd.append("cat","business");fd.append("desc","Website sample uploaded by SUSHANT YADAV.");const j=await api("/api/projects",{method:"POST",body:fd});data=j.data;renderAdminWorks();apply();$("clearUploadedWebsite").click();toast("✓ Website published and hosted")}catch(e){toast(e.message)}});
+ $("exportData")?.addEventListener("click",downloadBackup);$("exportData2")?.addEventListener("click",downloadBackup);
+ $("importFile")?.addEventListener("change",e=>{toast("Backup import is not enabled in this production build; use Export Backup.")});
+ $("changePassword")?.addEventListener("click",async()=>{if($("newPass").value!==$("confirmPass").value){toast("New passwords do not match");return}try{await api("/api/admin/password",{method:"PUT",headers:{"Content-Type":"application/json"},body:JSON.stringify({current:$("currentPass").value,next:$("newPass").value})});$("currentPass").value=$("newPass").value=$("confirmPass").value="";toast("Password changed successfully")}catch(e){toast(e.message)}});
+$("importBackup")?.addEventListener("click",async()=>{const f=$("importFile").files[0];if(!f){toast("Choose a JSON backup first");return}try{const d=JSON.parse(await f.text());const j=await api("/api/admin/restore",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(d)});data=j.data;loadAdmin();apply();renderPricingEditor();toast("Backup restored")}catch(e){toast(e.message)}});
+$("resetData")?.addEventListener("click",async()=>{if(!confirm("Reset settings and portfolio to defaults?"))return;try{const j=await api("/api/admin/reset",{method:"POST"});data=j.data;loadAdmin();apply();toast("Website data reset")}catch(e){toast(e.message)}});
+ $("closeWebsitePreview")?.addEventListener("click",()=>{$("websitePreview").classList.remove("show");$("websiteFrame").src=""});
+ $("openPreviewTab")?.addEventListener("click",()=>{if(currentPreview)window.open(currentPreview,"_blank","noopener")});
+ document.addEventListener("keydown",e=>{if(e.key==="Escape")document.querySelectorAll(".settingsOverlay,.loginModal,.modal,.websitePreview").forEach(x=>x.classList.remove("show"))});
+ try{await refreshPublic()}catch(e){console.error(e);toast("Could not load website data")}
+ // If the user visits /admin directly, open the same private login used by Settings.
+ if(location.pathname==="/admin"){
+   $("settingsOverlay")?.classList.remove("show");
+   $("loginModal")?.classList.add("show");
+   setTimeout(()=>$("adminUser")?.focus(),100);
+ }
+}
+document.readyState==="loading"?document.addEventListener("DOMContentLoaded",init):init();
+</script>
+
+</body>
+</html>
